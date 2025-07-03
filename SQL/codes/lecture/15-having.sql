@@ -43,3 +43,4 @@ GROUP BY sales_rep
 HAVING 월평균매출 >= 5* POWER(10,5)
 ORDER BY 월평균매출 DESC;
 
+
