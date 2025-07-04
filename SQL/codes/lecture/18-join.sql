@@ -71,10 +71,31 @@ FROM sales
 GROUP BY category, product_name
 ORDER BY category;
 
+-- INNER JOIN 교집합
+SELECT 
+	'1. INNER JOIN' AS 구분,
+    COUNT(*) AS 줄수,
+    COUNT(DISTINCT c.customer_id) AS 고객수
+FROM customers c
+INNER JOIN sales s ON c.customer_id = s.customer_id
 
+UNION
 
+-- LEFT JOIN 왼쪽(FROM 뒤에 온) 테이블은 무조건 다 나옴
+SELECT
+	'2.LEFT JOIN' AS 구분,
+    COUNT(*) AS 줄수,
+    COUNT(DISTINCT c.customer_id) AS 고객수
+FROM customers c
+LEFT JOIN sales s ON c.customer_id = s.customer_id
 
+UNION
 
+SELECT
+	'3.전체 고객 수' AS 구분,
+    COUNT(*) AS 행수,
+    COUNT(*) AS 고객수
+FROM customers;
 
 
 
