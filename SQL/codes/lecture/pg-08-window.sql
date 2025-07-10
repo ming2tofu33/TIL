@@ -92,7 +92,9 @@ region_top_sale AS (
 		region,
 		customer_id,
 		총구매액,
-		RANK() OVER (PARTITION BY region ORDER BY 총구매액 DESC) AS 순위
+		RANK() OVER (
+			PARTITION BY region 
+			ORDER BY 총구매액 DESC) AS 순위
 	FROM region_sales
 )
 SELECT 
@@ -103,7 +105,7 @@ SELECT
 	r.총구매액
 FROM region_top_sale r
 INNER JOIN customers c ON r.customer_id = c.customer_id
-WHERE 순위 = 1
+WHERE 순위 < 4;
 
 
 
