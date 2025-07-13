@@ -1,0 +1,6 @@
+customer → invoice → invoice_line → track
+                                   ↑               ↑
+                              playlist_track      ↓
+                                   ↑            album → artist
+                                 playlist           ↓
+                                            genre, media_type
