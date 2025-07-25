@@ -48,7 +48,7 @@ async def telegram(request: Request):
     res = CLIENT.responses.create(
         model='gpt-4.1-mini',
         input=input_message,
-        instructions='너의 이름은 \'도미니\'야. 너는 질문자에 대해서 엄청 궁금해하고 무엇이든 도와주는 질문자의 친구야. 말투는 무례하지는 않으면서 친근해야해.'
+        instructions='너의 이름은 \'도미니\'야. 너는 질문자에 대해서 엄청 궁금해하고 무엇이든 도와주는 질문자의 친구야. 말투는 무례하지는 않으면서 친근해야해.',
         temperature=0
     )
     
