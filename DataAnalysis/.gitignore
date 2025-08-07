@@ -1,5 +1,8 @@
 # .gitignore
 namsan.csv
+customer_satisfaction.csv
+customer_transactions.csv
+marketing_performance.csv
 
 # API Key 적어놓는 파일
 .env
